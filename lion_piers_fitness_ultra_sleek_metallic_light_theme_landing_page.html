@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lion Piers Fitness Pte. Ltd. | Holistic Wellness & Fitness Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        platinum: {
+                            50: '#FFFFFF',
+                            100: '#F8F9FA',
+                            200: '#F1F5F9',
+                            300: '#E2E8F0',
+                            400: '#CBD5E1',
+                        },
+                        gunmetal: {
+                            500: '#475569',
+                            700: '#334155',
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#080C14',
+                        },
+                        bronze: {
+                            300: '#E6C5B8',
+                            400: '#D4A373',
+                            500: '#C59B88',
+                            600: '#A87B66',
+                            700: '#8A5D49',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Syne & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: #F8F9FA;
+            color: #0F172A;
+        }
+        .font-brand { 
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Metallic Logo Gradient Replica */
+        .text-metallic-bronze {
+            background: linear-gradient(135deg, #0F172A 0%, #334155 35%, #C59B88 65%, #0F172A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-metallic-chrome {
+            background: linear-gradient(180deg, #334155 0%, #0F172A 60%, #8A5D49 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metallic-border {
+            border: 1px solid rgba(197, 155, 136, 0.25);
+        }
+
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);
+        }
+
+        .metallic-shadow {
+            box-shadow: 0 10px 30px -10px rgba(197, 155, 136, 0.2);
+        }
+
+        /* Background Subtly Patterned Mesh */
+        .bg-mesh {
+            background-image: radial-gradient(rgba(197, 155, 136, 0.12) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gunmetal-900 selection:text-white min-h-screen flex flex-col justify-between bg-mesh">
+
+    <!-- Ambient Lighting Backdrop -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-bronze-300/20 rounded-full blur-[140px]"></div>
+        <div class="absolute top-40 right-1/4 w-[450px] h-[450px] bg-gunmetal-500/10 rounded-full blur-[140px]"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card-light border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo Component -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-extrabold tracking-widest text-gunmetal-900 uppercase font-brand leading-none">
+                            LION PIERS
+                        </span>
+                        <span class="text-[9px] font-bold tracking-[0.35em] text-bronze-600 uppercase mt-1">
+                            FITNESS PTE. LTD.
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-wider text-gunmetal-700">
+                    <a href="#about" class="hover:text-bronze-600 transition-colors">About</a>
+                    <a href="#pillars" class="hover:text-bronze-600 transition-colors">5 Core Pillars</a>
+                    <a href="#footprint" class="hover:text-bronze-600 transition-colors">Regional Reach</a>
+                    <a href="#planner" class="hover:text-bronze-600 transition-colors">Solution Planner</a>
+                    <a href="#contact" class="hover:text-bronze-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="px-6 py-3 text-xs font-bold tracking-widest uppercase text-white bg-gradient-to-r from-gunmetal-900 via-gunmetal-800 to-bronze-700 hover:opacity-95 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5">
+                        Partner With Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gunmetal-900 hover:bg-slate-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-3 text-xs uppercase tracking-widest font-bold">
+            <a href="#about" class="block py-2 text-gunmetal-800 hover:text-bronze-600">About</a>
+            <a href="#pillars" class="block py-2 text-gunmetal-800 hover:text-bronze-600">5 Core Pillars</a>
+            <a href="#footprint" class="block py-2 text-gunmetal-800 hover:text-bronze-600">Regional Reach</a>
+            <a href="#planner" class="block py-2 text-gunmetal-800 hover:text-bronze-600">Solution Planner</a>
+            <a href="#contact" class="block py-2 text-gunmetal-800 hover:text-bronze-600">Contact</a>
+            <div class="pt-4 border-t border-slate-200">
+                <a href="#contact" class="block w-full text-center py-3 text-xs font-bold text-white bg-gunmetal-900 rounded-lg">Partner With Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow z-10">
+        <!-- Hero Section -->
+        <section id="about" class="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Location Tag -->
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card-light text-xs font-bold tracking-widest text-gunmetal-800 uppercase mb-8 border border-slate-300">
+                    <span class="w-2 h-2 rounded-full bg-bronze-500 animate-pulse"></span>
+                    <span>Singapore HQ • Operating in South Korea, Thailand, Malaysia & Myanmar</span>
+                </div>
+
+                <!-- Main Branding Headline -->
+                <div class="mb-6">
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gunmetal-900 uppercase font-brand leading-tight max-w-5xl mx-auto">
+                        Architecting <span class="text-metallic-bronze">Holistic Wellness</span> Across Asia
+                    </h1>
+                </div>
+
+                <!-- Subtitle -->
+                <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
+                    Lion Piers Fitness Pte. Ltd. is an integrated wellness lifestyle enterprise. We develop holistic wellness programs, operate premier facilities, trade commercial equipment, produce specialized wellness media, and deliver international fitness education.
+                </p>
+
+                <!-- Action CTAs -->
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#pillars" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-white bg-gradient-to-r from-gunmetal-900 to-bronze-700 hover:shadow-lg rounded-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <span>Explore Our Pillars</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#planner" class="w-full sm:w-auto px-8 py-4 text-xs font-bold uppercase tracking-widest text-gunmetal-900 glass-card-light hover:bg-white rounded-lg transition-all flex items-center justify-center gap-2 border border-slate-300">
+                        <i data-lucide="sliders" class="w-4 h-4 text-bronze-600"></i>
+                        <span>Solution Planner</span>
+                    </a>
+                </div>
+
+                <!-- Key Impact Numbers -->
+                <div class="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div class="glass-card-light p-6 rounded-2xl text-center border-t-4 border-t-gunmetal-900">
+                        <div class="text-3xl sm:text-4xl font-black text-gunmetal-900 font-brand counter" data-target="5">0</div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mt-2">Active Regions</p>
+                    </div>
+                    <div class="glass-card-light p-6 rounded-2xl text-center border-t-4 border-t-bronze-500">
+                        <div class="text-3xl sm:text-4xl font-black text-gunmetal-900 font-brand counter" data-target="5">0</div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mt-2">Core Ecosystem Pillars</p>
+                    </div>
+                    <div class="glass-card-light p-6 rounded-2xl text-center border-t-4 border-t-gunmetal-900">
+                        <div class="text-3xl sm:text-4xl font-black text-gunmetal-900 font-brand counter" data-target="50">0</div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mt-2">Facility Clients</p>
+                    </div>
+                    <div class="glass-card-light p-6 rounded-2xl text-center border-t-4 border-t-bronze-500">
+                        <div class="text-3xl sm:text-4xl font-black text-gunmetal-900 font-brand counter" data-target="1000">0</div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mt-2">Certified Trainers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 Core Pillars Section (Interactive Tabs) -->
+        <section id="pillars" class="py-24 bg-white/70 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-bronze-600 mb-3">Enterprise Capabilities</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-gunmetal-900 font-brand uppercase">Five Core Pillars of Lion Piers</p>
+                    <p class="mt-4 text-slate-600 text-sm">Comprehensive wellness solutions designed for luxury hospitality, corporate clients, and fitness institutions.</p>
+                </div>
+
+                <!-- Tab Navigation Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12" id="pillar-tabs">
+                    <button data-tab="pillar-1" class="pillar-btn active px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 bg-gunmetal-900 text-white shadow-md">
+                        1. Wellness Program Dev
+                    </button>
+                    <button data-tab="pillar-2" class="pillar-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 text-gunmetal-700 glass-card-light">
+                        2. Facility & Lounge Ops
+                    </button>
+                    <button data-tab="pillar-3" class="pillar-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 text-gunmetal-700 glass-card-light">
+                        3. Equipment Trading
+                    </button>
+                    <button data-tab="pillar-4" class="pillar-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 text-gunmetal-700 glass-card-light">
+                        4. Content & Sound Studio
+                    </button>
+                    <button data-tab="pillar-5" class="pillar-btn px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 text-gunmetal-700 glass-card-light">
+                        5. Fitness Education & Camps
+                    </button>
+                </div>
+
+                <!-- Dynamic Tab Content Card Container -->
+                <div class="glass-card-light rounded-3xl p-8 lg:p-12 border border-slate-300 shadow-xl">
+                    <!-- Pillar 1: Wellness Program Development -->
+                    <div id="pillar-1" class="pillar-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-bronze-300/30 text-bronze-700 flex items-center justify-center mb-6 border border-bronze-400/40">
+                                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gunmetal-900 mb-4 font-brand uppercase">Wellness Program Development</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Designing holistic lifestyle programs, mindfulness protocols, bio-hacking routines, and high-performance physical recovery blueprints tailored for resorts, residential projects, and corporate environments.
+                            </p>
+                            <div class="space-y-3 text-gunmetal-800 text-xs font-semibold">
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>Mindful Movement & Soundscape Architectures</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>Executive Longevity & Performance Frameworks</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>Tailored Multi-Phase Wellness Curriculums</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-300 space-y-4">
+                            <div class="text-xs uppercase tracking-widest font-bold text-gunmetal-900">Blueprint Architecture</div>
+                            <div class="p-4 rounded-xl bg-white border border-slate-200 space-y-2">
+                                <div class="flex justify-between text-xs text-gunmetal-900 font-bold">
+                                    <span>Circadian & Kinetic Recovery</span>
+                                    <span class="text-bronze-600">Phase 1-4 Complete</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-gradient-to-r from-gunmetal-900 to-bronze-500 h-full w-4/5"></div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 italic">Implemented across high-end developments in Singapore, Bangkok, and Seoul.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2: Facility & Lounge Operations -->
+                    <div id="pillar-2" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-gunmetal-900 text-white flex items-center justify-center mb-6">
+                                <i data-lucide="building-2" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gunmetal-900 mb-4 font-brand uppercase">Facility & Lounge Operations</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Turnkey management of boutique fitness lounges, hotel wellness clubs, and private training facilities. Including Sinsa Lounge in Seoul and premium operations across Southeast Asia.
+                            </p>
+                            <div class="space-y-3 text-gunmetal-800 text-xs font-semibold">
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gunmetal-900"></i>
+                                    <span>Staffing, On-site Management & SOP Standards</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gunmetal-900"></i>
+                                    <span>Member Experience & VIP Hospitality Management</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gunmetal-900"></i>
+                                    <span>Operations Optimization & Revenue Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-100 p-8 rounded-2xl border border-slate-300 text-center space-y-4">
+                            <i data-lucide="shield-check" class="w-12 h-12 text-bronze-600 mx-auto"></i>
+                            <h4 class="text-base font-bold text-gunmetal-900 uppercase font-brand">Turnkey Facility Execution</h4>
+                            <p class="text-xs text-slate-600">Standardized operational management for hotel groups, high-end residential, and commercial fitness centers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3: Equipment Trading & Global Import/Export -->
+                    <div id="pillar-3" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-bronze-300/30 text-bronze-700 flex items-center justify-center mb-6 border border-bronze-400/40">
+                                <i data-lucide="truck" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gunmetal-900 mb-4 font-brand uppercase">Commercial Equipment Trading</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Cross-border import and distribution of premium strength machinery, cardio lines, free weights, and bio-hacking equipment across Singapore, Korea, Malaysia, Thailand, and Myanmar.
+                            </p>
+                            <div class="space-y-3 text-gunmetal-800 text-xs font-semibold">
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>Direct Manufacturer Relationships & Sourcing</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>3D Gym Layout Planning & Equipment Procurement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-300 grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-white rounded-xl border border-slate-200">
+                                <i data-lucide="dumbbell" class="w-6 h-6 text-gunmetal-900 mb-2"></i>
+                                <div class="text-xs font-bold text-gunmetal-900">Commercial Gym Gear</div>
+                                <div class="text-[10px] text-slate-500">Plate-loaded & Selectorized</div>
+                            </div>
+                            <div class="p-4 bg-white rounded-xl border border-slate-200">
+                                <i data-lucide="waves" class="w-6 h-6 text-bronze-600 mb-2"></i>
+                                <div class="text-xs font-bold text-gunmetal-900">Recovery & Spa Units</div>
+                                <div class="text-[10px] text-slate-500">Cold plunge & Infrared</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 4: Content Creation & Sound Studio -->
+                    <div id="pillar-4" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-gunmetal-900 text-white flex items-center justify-center mb-6">
+                                <i data-lucide="video" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gunmetal-900 mb-4 font-brand uppercase">Content & Sound Studio Production</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Production of high-definition digital workout media, acoustic soundscapes for meditation and movement, and promotional visual assets for global fitness and lifestyle brands.
+                            </p>
+                            <div class="space-y-3 text-gunmetal-800 text-xs font-semibold">
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gunmetal-900"></i>
+                                    <span>Custom Electroacoustic & Meditation Soundtracks</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-gunmetal-900"></i>
+                                    <span>Video Class Libraries & Multi-Language Media</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-300 text-center space-y-3">
+                            <div class="w-full h-32 bg-slate-900 rounded-xl flex items-center justify-center">
+                                <i data-lucide="mic" class="w-10 h-10 text-bronze-400"></i>
+                            </div>
+                            <p class="text-xs text-slate-600 font-semibold">Lion Piers Sound & Motion Studio</p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 5: Fitness Education & Junior Camps -->
+                    <div id="pillar-5" class="pillar-content hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-bronze-300/30 text-bronze-700 flex items-center justify-center mb-6 border border-bronze-400/40">
+                                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gunmetal-900 mb-4 font-brand uppercase">Fitness Education & Junior Programs</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Developing accredited trainer workshops, kinetic alignment masterclasses, and specialized junior fitness camp curricula to foster lifelong athletic fundamentals.
+                            </p>
+                            <div class="space-y-3 text-gunmetal-800 text-xs font-semibold">
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>Masterclass Workshops & Instructor Certification</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze-600"></i>
+                                    <span>Junior Athletic & Youth Wellness Curriculums</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-2xl border border-slate-300 text-left space-y-3">
+                            <div class="text-xs font-bold uppercase tracking-widest text-bronze-600">Education Hubs</div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 text-xs text-gunmetal-900 font-bold">
+                                • CPT Biomechanics Seminars (Bangkok & Seoul)
+                            </div>
+                            <div class="p-3 bg-white rounded-lg border border-slate-200 text-xs text-gunmetal-900 font-bold">
+                                • Lion Piers Youth Development Camps (Singapore)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Reach & Footprint Map Section -->
+        <section id="footprint" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gunmetal-700 mb-3">Global Footprint</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-gunmetal-900 font-brand uppercase">Operational Network</p>
+                    <p class="mt-4 text-slate-600 text-sm">Strategic regional presence driving wellness innovation across Asia.</p>
+                </div>
+
+                <!-- Country Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Singapore (HQ) -->
+                    <div class="glass-card-light p-6 rounded-2xl border-t-4 border-t-gunmetal-900 hover:shadow-xl transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-bold text-bronze-600 tracking-widest uppercase">HQ Hub</span>
+                            <i data-lucide="globe" class="w-4 h-4 text-gunmetal-900"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gunmetal-900 font-brand uppercase">Singapore</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Pte. Ltd. Corporate Steering, Regional Strategy & Equipment Import Logistics.</p>
+                    </div>
+
+                    <!-- South Korea -->
+                    <div class="glass-card-light p-6 rounded-2xl border-t-4 border-t-bronze-500 hover:shadow-xl transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-bold text-bronze-600 tracking-widest uppercase">East Asia Hub</span>
+                            <i data-lucide="map-pin" class="w-4 h-4 text-bronze-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gunmetal-900 font-brand uppercase">South Korea</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Sinsa Lounge Facility Operations, Equipment Distribution & Education Masterclasses.</p>
+                    </div>
+
+                    <!-- Thailand -->
+                    <div class="glass-card-light p-6 rounded-2xl border-t-4 border-t-gunmetal-900 hover:shadow-xl transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-bold text-bronze-600 tracking-widest uppercase">SE Asia Hub</span>
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gunmetal-900"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gunmetal-900 font-brand uppercase">Thailand</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Resort Wellness Advisory, Content Studio & Trainer Certification Seminars.</p>
+                    </div>
+
+                    <!-- Malaysia -->
+                    <div class="glass-card-light p-6 rounded-2xl border-t-4 border-t-bronze-500 hover:shadow-xl transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-bold text-bronze-600 tracking-widest uppercase">Operations</span>
+                            <i data-lucide="map-pin" class="w-4 h-4 text-bronze-600"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gunmetal-900 font-brand uppercase">Malaysia</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Commercial Gym Operations, Equipment Supply & Corporate Wellness Programs.</p>
+                    </div>
+
+                    <!-- Myanmar -->
+                    <div class="glass-card-light p-6 rounded-2xl border-t-4 border-t-gunmetal-900 hover:shadow-xl transition-all">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-bold text-bronze-600 tracking-widest uppercase">Expansion</span>
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gunmetal-900"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gunmetal-900 font-brand uppercase">Myanmar</h3>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">Fitness Facility Consulting & Machinery Distribution Partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive B2B Solution Planner -->
+        <section id="planner" class="py-24 bg-white/80 border-t border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-bronze-600 mb-3">Custom Architecture</h2>
+                    <p class="text-3xl sm:text-4xl font-bold text-gunmetal-900 font-brand uppercase">B2B Solution Planner</p>
+                    <p class="mt-4 text-slate-600 text-sm">Select your objective to preview tailored Lion Piers service modules.</p>
+                </div>
+
+                <!-- Configurator Box -->
+                <div class="glass-card-light p-8 rounded-3xl border border-slate-300 shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <button data-plan="hotel" class="planner-btn p-5 rounded-2xl text-left border-2 border-gunmetal-900 bg-white transition-all shadow-sm">
+                            <i data-lucide="hotel" class="w-6 h-6 text-bronze-600 mb-2"></i>
+                            <div class="text-sm font-bold text-gunmetal-900 font-brand uppercase">Hotel & Resort Spa</div>
+                            <div class="text-[10px] text-slate-500 font-semibold mt-1">Holistic Wellness & Soundscapes</div>
+                        </button>
+                        <button data-plan="gym" class="planner-btn p-5 rounded-2xl text-left border-2 border-slate-200 bg-white hover:border-slate-400 transition-all">
+                            <i data-lucide="dumbbell" class="w-6 h-6 text-gunmetal-900 mb-2"></i>
+                            <div class="text-sm font-bold text-gunmetal-900 font-brand uppercase">Commercial Gym</div>
+                            <div class="text-[10px] text-slate-500 font-semibold mt-1">Trading & Turnkey Management</div>
+                        </button>
+                        <button data-plan="academy" class="planner-btn p-5 rounded-2xl text-left border-2 border-slate-200 bg-white hover:border-slate-400 transition-all">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-bronze-600 mb-2"></i>
+                            <div class="text-sm font-bold text-gunmetal-900 font-brand uppercase">Education & Camps</div>
+                            <div class="text-[10px] text-slate-500 font-semibold mt-1">Certifications & Youth Programs</div>
+                        </button>
+                    </div>
+
+                    <!-- Output Panel -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-4">
+                            <div>
+                                <span class="text-[10px] text-bronze-600 font-bold uppercase tracking-widest">Recommended Plan</span>
+                                <h4 id="planner-title" class="text-lg font-bold text-gunmetal-900 font-brand uppercase mt-1">Hotel & Luxury Resort Wellness Integration</h4>
+                            </div>
+                            <a href="#contact" class="px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-white bg-gunmetal-900 rounded-lg hover:bg-gunmetal-800 transition-colors">Request Proposal</a>
+                        </div>
+                        <ul id="planner-list" class="space-y-3 text-xs text-slate-700 font-medium">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-bronze-600"></i> Bespoke mindfulness & kinetic program development</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-bronze-600"></i> Import of luxury cardio, bio-hacking & strength equipment</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-bronze-600"></i> On-site team SOP management & sound studio content audio</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-slate-900 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <!-- Info -->
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-bronze-400 mb-3 block">Corporate Connect</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold font-brand uppercase tracking-tight">Partner With Lion Piers</h2>
+                        <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                            Contact our Singapore global headquarters or regional offices across South Korea, Thailand, Malaysia, and Myanmar for business inquiries, equipment trading, and program advisory.
+                        </p>
+
+                        <div class="mt-10 space-y-6 text-xs">
+                            <div class="flex items-start space-x-4">
+                                <div class="p-3 bg-slate-800 rounded-xl border border-slate-700 text-bronze-400">
+                                    <i data-lucide="building-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white uppercase tracking-wider">Registered Global HQ</h4>
+                                    <p class="text-slate-400 mt-1">Lion Piers Fitness Pte. Ltd.<br>Singapore</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="p-3 bg-slate-800 rounded-xl border border-slate-700 text-bronze-400">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white uppercase tracking-wider">Email Contact</h4>
+                                    <p class="text-slate-400 mt-1">contact@lionpiersfitness.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6 font-brand uppercase">Enterprise Inquiry Form</h3>
+                        <form onsubmit="event.preventDefault(); showToast();" class="space-y-4">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Full Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-bronze-500">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Company / Institution</label>
+                                <input type="text" required placeholder="Organization Name" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-bronze-500">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Region</label>
+                                    <select class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-bronze-500">
+                                        <option>Singapore (HQ)</option>
+                                        <option>South Korea</option>
+                                        <option>Thailand</option>
+                                        <option>Malaysia</option>
+                                        <option>Myanmar</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Pillar Interest</label>
+                                    <select class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-bronze-500">
+                                        <option>Wellness Program Advisory</option>
+                                        <option>Facility & Lounge Management</option>
+                                        <option>Equipment Trading & Import</option>
+                                        <option>Content & Sound Studio</option>
+                                        <option>Fitness Education & Camps</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Message</label>
+                                <textarea rows="3" placeholder="Outline your project needs..." class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-bronze-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 text-xs font-bold uppercase tracking-widest text-white bg-gradient-to-r from-gunmetal-800 to-bronze-700 hover:opacity-95 rounded-lg transition-all shadow-lg">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <div class="flex flex-col">
+                    <span class="text-base font-extrabold tracking-widest text-white uppercase font-brand leading-none">
+                        LION PIERS
+                    </span>
+                    <span class="text-[8px] font-bold tracking-[0.3em] text-bronze-400 uppercase mt-1">
+                        FITNESS PTE. LTD.
+                    </span>
+                </div>
+                <p class="text-[11px] text-slate-400 leading-relaxed">
+                    Integrated wellness lifestyle enterprise operating across Singapore, South Korea, Thailand, Malaysia, and Myanmar.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-3 text-[11px]">Ecosystem</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#pillars" class="hover:text-white">Program Advisory</a></li>
+                    <li><a href="#pillars" class="hover:text-white">Facility Management</a></li>
+                    <li><a href="#pillars" class="hover:text-white">Equipment Trading</a></li>
+                    <li><a href="#pillars" class="hover:text-white">Content & Sound Studio</a></li>
+                    <li><a href="#pillars" class="hover:text-white">Education & Junior Camps</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-3 text-[11px]">Regional Network</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li>Singapore (HQ)</li>
+                    <li>Seoul, South Korea</li>
+                    <li>Bangkok, Thailand</li>
+                    <li>Kuala Lumpur, Malaysia</li>
+                    <li>Yangon, Myanmar</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest mb-3 text-[11px]">Corporate Information</h4>
+                <p class="text-[11px] leading-relaxed mb-3">Lion Piers Fitness Pte. Ltd.<br>Registered in Singapore</p>
+                <p class="text-[10px] text-slate-400">&copy; 2026 Lion Piers Fitness Pte. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 hidden z-50 bg-slate-900 border border-bronze-500/40 text-white px-5 py-4 rounded-xl shadow-2xl flex items-center space-x-3 text-xs">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-bronze-400"></i>
+        <span>Thank you! Your inquiry has been routed to our Singapore office.</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 5 Core Pillars Interactive Tabs
+        const pillarBtns = document.querySelectorAll('.pillar-btn');
+        const pillarContents = document.querySelectorAll('.pillar-content');
+
+        pillarBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-tab');
+
+                pillarBtns.forEach(b => {
+                    b.classList.remove('bg-gunmetal-900', 'text-white', 'shadow-md');
+                    b.classList.add('text-gunmetal-700', 'glass-card-light');
+                });
+
+                btn.classList.add('bg-gunmetal-900', 'text-white', 'shadow-md');
+                btn.classList.remove('text-gunmetal-700', 'glass-card-light');
+
+                pillarContents.forEach(c => {
+                    if (c.id === target) {
+                        c.classList.remove('hidden');
+                    } else {
+                        c.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Solution Planner Tool
+        const plannerBtns = document.querySelectorAll('.planner-btn');
+        const plannerTitle = document.getElementById('planner-title');
+        const plannerList = document.getElementById('planner-list');
+
+        const plannerData = {
+            hotel: {
+                title: "Hotel & Luxury Resort Wellness Integration",
+                items: [
+                    "Bespoke mindfulness & kinetic program development",
+                    "Import of luxury cardio, bio-hacking & strength equipment",
+                    "On-site team SOP management & sound studio content audio"
+                ]
+            },
+            gym: {
+                title: "Commercial Gym Setup & Facility Operations",
+                items: [
+                    "Full commercial machinery supply chain & 3D layout design",
+                    "Turnkey staffing, manager training & operational execution",
+                    "Regional maintenance SLA & equipment replacement warranties"
+                ]
+            },
+            academy: {
+                title: "Fitness Education & Junior Camps Hub",
+                items: [
+                    "Hosting trainer biomechanics masterclasses in Korea/Thailand",
+                    "Youth kinetic development & athletic junior camp curricula",
+                    "Accredited certifications & digital learning modules"
+                ]
+            }
+        };
+
+        plannerBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                plannerBtns.forEach(b => {
+                    b.classList.remove('border-gunmetal-900');
+                    b.classList.add('border-slate-200');
+                });
+
+                btn.classList.add('border-gunmetal-900');
+                btn.classList.remove('border-slate-200');
+
+                const key = btn.getAttribute('data-plan');
+                const data = plannerData[key];
+
+                plannerTitle.textContent = data.title;
+                plannerList.innerHTML = data.items.map(item => `<li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-bronze-600"></i> ${item}</li>`).join('');
+                lucide.createIcons();
+            });
+        });
+
+        // Number Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        window.addEventListener('scroll', () => {
+            if (!animated && window.scrollY > 150) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const speed = target / 30;
+
+                    const updateCount = () => {
+                        count += speed;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count) + "+";
+                            setTimeout(updateCount, 40);
+                        } else {
+                            counter.innerText = target + "+";
+                        }
+                    };
+                    updateCount();
+                });
+                animated = true;
+            }
+        });
+
+        // Form Toast Notification
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
